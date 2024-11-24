@@ -1,7 +1,17 @@
 #include <iostream>
-
-class a{};
+#include <fstream>
+#include "Point.hpp"
 
 int main() {
-  std::cout << "Hello world";
+  Point P(1, 2);
+
+
+
+
+
+  std::ofstream File("../points.txt");
+  if (File.is_open()) {
+    File << P.X << " " << P.Y << "\n";
+    File.close();
+  }
 }
